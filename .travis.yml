@@ -1,7 +1,6 @@
 language: java
 before_install:
-- curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-- chmod a+x ~/bin/repo
+- sudo ap-get install repo
 - repo init -u https://github.com/manifest -b lollipop
 - repo sync
 - . build/envsetup.sh
