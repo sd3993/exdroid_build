@@ -5,6 +5,8 @@ before_install:
 - sudo apt-get install bison g++-multilib git gperf libxml2-utils
 - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
+- git config --global user.email "shouvik.dey3993@gmail.com"
+- git config --global user.name "sd3993"
 - mkdir l
 - cd l
 - repo init -u https://github.com/exdroid/manifest -b lollipop
