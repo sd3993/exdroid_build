@@ -1,6 +1,6 @@
 language: java
 before_install:
-- sudo ap-get install repo
+- sudo apt-get install repo
 - repo init -u https://github.com/manifest -b lollipop
 - repo sync
 - . build/envsetup.sh
