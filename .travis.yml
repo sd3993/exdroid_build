@@ -11,9 +11,9 @@ before_install:
 - mkdir l
 - cd l
 - repo init -u https://github.com/exdroid/manifest -b lollipop
-- travis logs --delete
+- clear
 - repo sync -q -j50
-- travis logs --delete
+- clear
 - . build/envsetup.sh
 - lunch aosp_mako-userdebug
 script: mka otapackage
