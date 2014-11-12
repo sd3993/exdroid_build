@@ -7,6 +7,7 @@ before_install:
 - chmod a+x ~/bin/repo
 - git config --global user.email "shouvik.dey3993@gmail.com"
 - git config --global user.name "sd3993"
+- git config --global color.ui true
 - mkdir l
 - cd l
 - repo init -u https://github.com/exdroid/manifest -b lollipop
