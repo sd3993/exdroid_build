@@ -2,7 +2,12 @@ language: java
 before_install:
 - mkdir ~/bin
 - PATH=~/bin:$PATH
-- sudo apt-get install bison g++-multilib git gperf libxml2-utils
+- sudo apt-get install git gnupg flex bison gperf build-essential \
+  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
+  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos \
+  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+- sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
 - git config --global user.email "shouvik.dey3993@gmail.com"
@@ -11,10 +16,10 @@ before_install:
 - mkdir l
 - cd l
 - repo init -u https://github.com/exdroid/manifest -b lollipop
-- repo sync -q
+- repo sync -q -j100
 - . build/envsetup.sh
 - lunch aosp_mako-userdebug
-script: mka otapackage
+script: make otapackage -s -j10
 deploy:
   provider: releases
   skip_cleanup: true
