@@ -11,9 +11,9 @@ before_install:
 - mkdir l
 - cd l
 - repo init -u https://github.com/exdroid/manifest -b lollipop
-- repo sync -q -j100
+- repo sync -q -j500
 - . build/envsetup.sh
-- lunch aosp_mako-userdebug
+- lunch xd_mako-userdebug
 script: make otapackage -s -j10
 deploy:
   provider: releases
