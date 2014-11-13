@@ -3,7 +3,6 @@ before_install:
 - mkdir ~/bin
 - PATH=~/bin:$PATH
 - sudo apt-get install bison g++-multilib git gperf libxml2-utils
-- sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
 - git config --global user.email "shouvik.dey3993@gmail.com"
