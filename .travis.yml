@@ -2,7 +2,7 @@ language: java
 before_install:
 - mkdir ~/bin
 - PATH=~/bin:$PATH
-- sudo apt-get install bison g++-multilib git gperf libxml2-utils
+- sudo apt-get install bison g++-multilib git gperf libxml2-utils schedtool
 - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 - chmod a+x ~/bin/repo
 - git config --global user.email "shouvik.dey3993@gmail.com"
@@ -14,7 +14,7 @@ before_install:
 - repo sync -q -j50
 - . build/envsetup.sh
 - lunch xd_mako-userdebug
-script: make otapackage -s -j10
+script: make otapackage -s -j100
 deploy:
   provider: releases
   skip_cleanup: true
