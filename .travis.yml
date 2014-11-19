@@ -15,7 +15,7 @@ before_install:
 - repo sync -q -j50
 - . build/envsetup.sh
 - lunch xd_mako-userdebug
-script: make otapackage -s -j80
+script: make otapackage -s -j50
 deploy:
   provider: releases
   skip_cleanup: true
