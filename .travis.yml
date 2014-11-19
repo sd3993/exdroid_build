@@ -12,9 +12,10 @@ before_install:
 - cd l
 - repo init -u https://github.com/exdroid/manifest -b lollipop
 - repo sync -q -j50
+- repo sync -q -j50
 - . build/envsetup.sh
 - lunch xd_mako-userdebug
-script: make otapackage -s -j100
+script: make otapackage -s -j80
 deploy:
   provider: releases
   skip_cleanup: true
