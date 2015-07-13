@@ -1,21 +1,9 @@
 language: java
 before_install:
-- mkdir ~/bin
-- PATH=~/bin:$PATH
-- sudo apt-get install bison g++-multilib git gperf libxml2-utils schedtool
-- curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-- chmod a+x ~/bin/repo
-- git config --global user.email "shouvik.dey3993@gmail.com"
-- git config --global user.name "sd3993"
-- git config --global color.ui true
-- mkdir l
-- cd l
-- repo init -u https://github.com/exdroid/manifest -b lollipop
-- repo sync -q -j30
-- repo sync -q -j30
-- . build/envsetup.sh
-- lunch xd_mako-userdebug
-script: make otapackage -j10
+- git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+- makdir ~/chromium
+- cd ~/chromium
+script: ~/depot_tools/fetch -nohooks android
 deploy:
   provider: releases
   skip_cleanup: true
