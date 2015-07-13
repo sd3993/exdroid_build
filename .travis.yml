@@ -5,7 +5,7 @@ before_install:
 - PATH=~/depot_tools:$PATH
 - mkdir ~/chromium
 - cd ~/chromium
-script: fetch -nohooks android
+script: fetch --no-history android
 deploy:
   provider: releases
   skip_cleanup: true
