@@ -1,9 +1,11 @@
 language: java
 before_install:
+- cd ~/
 - git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+- PATH=~/depot_tools:$PATH
 - mkdir ~/chromium
-- cd ~/depot_tools
-script: 
+- cd ~/chromium
+script: fetch -nohooks android
 deploy:
   provider: releases
   skip_cleanup: true
