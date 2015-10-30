@@ -9,6 +9,7 @@ before_install:
 - git config --global user.name "sd3993"
 - git clone https://android.googlesource.com/platform/packages/apps/Settings.git lollipop-mr1-release
 - git checkout -b m6x
+- git push --set-upstream exdroid m6x
 - git remote add exdroid https://github.com/exdroid/packages_apps_Settings.git
 - git push -u exdroid
 script:
