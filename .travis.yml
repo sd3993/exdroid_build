@@ -4,7 +4,8 @@ before_install:
 - ssh-keygen -f file.rsa -t rsa -N ''
 - cat ~/.ssh/id_rsa.pub
 - sleep 1m
-- mkdir settings && cd settings
+- mkdir settings && makdir base
+- cd settings
 - git init
 - git config --global push.default simple
 - git config --global credential.helper cache
@@ -12,8 +13,7 @@ before_install:
 - git config --global user.name "sd3993"
 - git clone https://android.googlesource.com/platform/packages/apps/Settings.git lollipop-mr1-release
 - git checkout -b m6x
-- git push --set-upstream exdroid m6x
-- git remote add exdroid https://github.com/exdroid/packages_apps_Settings.git
+- git remote add exdroid git@github.com:exdroid/packages_apps_Settings.git
 - git push -u exdroid
 script:
 deploy:
