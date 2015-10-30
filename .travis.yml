@@ -1,8 +1,10 @@
 language: java
 before_install:
 - cd ~/
+- ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+- cat ~/.ssh/id_rsa.pub
+- sleep 1m
 - git config --global push.default simple
-- git config --global credential.helper cache
 - git config --global user.email "shouvik.dey3993@gmail.com"
 - git config --global user.name "sd3993"
 - mkdir settings && mkdir base
@@ -10,14 +12,14 @@ before_install:
 - git init
 - git clone https://android.googlesource.com/platform/packages/apps/Settings.git lollipop-mr1-release
 - git checkout -b m6x
-- git remote add exdroid hittps://github.com/exdroid/packages_apps_Settings.git
-- echo -e "sd3993\nGitHubFriggo!!3993\n" | git push -u exdroid
+- git remote add exdroid git@github.com:exdroid/packages_apps_Settings.git
+- git push -u exdroid
 - cd ..
 - cd base
 - git init
 - git clone https://android.googlesource.com/platform/frameworks/base.git android-5.1.1_r24
 - git checkout -b m6x
-- git remote add exdroid hittps://github.com/exdroid/frameworks_base.git
+- git remote add exdroid git@github.com:exdroid/frameworks_base.git
 - git push -u exdroid
 script:
 deploy:
