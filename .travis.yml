@@ -11,17 +11,17 @@ before_install:
 - mkdir settings && mkdir base
 - cd settings
 - git init
-- git clone https://android.googlesource.com/platform/packages/apps/Settings.git lollipop-mr1-release
-- git checkout -b m6x
+- git clone https://android.googlesource.com/platform/packages/apps/Settings.git android-5.1.1_r24
+- repo start m6x .
 - git remote add exdroid git@github.com:exdroid/packages_apps_Settings.git
-- git push -f -v -u exdroid m6x
+- git status
 - cd ..
 - cd base
 - git init
 - git clone https://android.googlesource.com/platform/frameworks/base.git android-5.1.1_r24
 - git checkout -b m6x
 - git remote add exdroid git@github.com:exdroid/frameworks_base.git
-- git push -f -v -u exdroid m6x
+- git push -vu exdroid m6x
 script:
 deploy:
   provider: releases
