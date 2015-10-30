@@ -1,6 +1,9 @@
 language: java
 before_install:
 - cd ~/
+- ssh-keygen -f file.rsa -t rsa -N ''
+- cat ~/.ssh/id_rsa.pub
+- sleep 1m
 - mkdir settings && cd settings
 - git init
 - git config --global push.default simple
