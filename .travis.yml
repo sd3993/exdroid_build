@@ -1,10 +1,11 @@
 language: java
 before_install:
 - cd ~/
-- git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-- PATH=~/depot_tools:$PATH
-- mkdir ~/chromium
-- cd ~/chromium
+- mkdir settings && cd settings
+- git config --global credential.helper cache
+- git config --global user.email "shouvik.dey3993@gmail.com"
+- git config --global user.name "sd3993"
+- git clone https://android.googlesource.com/platform/packages/apps/Settings lollipop-mr1-release
 script: fetch --nohooks android
 deploy:
   provider: releases
