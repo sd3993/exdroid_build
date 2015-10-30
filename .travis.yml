@@ -8,7 +8,7 @@ before_install:
 - git config --global push.default simple
 - git config --global user.email "shouvik.dey3993@gmail.com"
 - git config --global user.name "sd3993"
-- git clone https://android.googlesource.com/platform/packages/apps/Settings.git --branch android-5.1.1_r24
+- git clone https://android.googlesource.com/platform/packages/apps/Settings.git --branch android-6.0.0_r1
 - cd Settings
 - git remote add exdroid git@github.com:exdroid/packages_apps_Settings.git
 - git checkout -b m6x
@@ -16,7 +16,7 @@ before_install:
 - git reset --hard
 - git push -u -v exdroid
 - cd ..
-- git clone https://android.googlesource.com/platform/frameworks/base.git
+- git clone https://android.googlesource.com/platform/frameworks/base.git --branch android-6.0.0_r1
 - cd base
 - git remote add exdroid git@github.com:exdroid/frameworks_base.git
 - git checkout -b m6x
