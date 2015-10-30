@@ -3,6 +3,7 @@ before_install:
 - cd ~/
 - mkdir settings && cd settings
 - git init
+- git config --global push.default simple
 - git config --global credential.helper cache
 - git config --global user.email "shouvik.dey3993@gmail.com"
 - git config --global user.name "sd3993"
