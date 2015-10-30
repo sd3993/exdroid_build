@@ -11,8 +11,8 @@ before_install:
 - mkdir settings && mkdir base
 - cd settings
 - git init
+- git checkout -b m6x
 - git clone https://android.googlesource.com/platform/packages/apps/Settings.git android-5.1.1_r24
-- repo start m6x .
 - git remote add exdroid git@github.com:exdroid/packages_apps_Settings.git
 - git status
 - cd ..
